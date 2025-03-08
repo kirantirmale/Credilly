@@ -17,7 +17,7 @@ const BookCarForm = () => {
     bank: ""
   });
 
-  useEffect(() => {
+  useEffect(() => { 
     const storedData = localStorage.getItem("bookCarData");
     if (storedData) {
       setBookCarData(JSON.parse(storedData));

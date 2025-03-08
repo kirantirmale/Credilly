@@ -111,13 +111,12 @@ const BookCar = () => {
 				autoClose: 3000,
 			});
 			localStorage.setItem("bookCarData", JSON.stringify(submittedData));
-
-		
-				
-			
       setIsOtpOpen(false);
       reset(); // Reset form after successful OTP
       setOtp("");
+			setTimeout(() => {
+				window.location.reload(); // Refresh the page after 3 seconds
+		}, 3000);
     } else {
       toast.error("Invalid OTP. Try again.");
     }
