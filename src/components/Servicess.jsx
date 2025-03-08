@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import { gsap } from "gsap";
-import Arrow from '../images/icon/Arrow.png'
+import Arrow from '../images/icon/Arrow.png';
 import { useNavigate } from "react-router-dom";
+
 const Servicess = () => {
     const navigate = useNavigate();
     const canvasRef = useRef(null);
@@ -156,16 +157,17 @@ const Servicess = () => {
     return (
         <section>
             <div className="main-about box">
-                <div ref={largeHeaderRef} className="large-header">
+                <div ref={largeHeaderRef}  className="large-header">
                     <canvas ref={canvasRef}></canvas>
-                    <h1 className="main-title">Product Development and Ideation Services</h1>
+                    <h1 className="main-title">Smart Automotive Solutions</h1>
                     <p className="para">
-                        Unlock the potential of your business with Intelisync's advanced AI
-                        development services. Our custom-built AI solutions streamline workflows,
-                        enhance efficiency, and drive significant growth.
+                        Drive into the future with **AI-powered car innovations**. From **smart diagnostics** to **automated driving assistants**, our cutting-edge automotive technology enhances safety, efficiency, and performance.
+                    </p>
+                    <p className="para">
+                        Experience **real-time vehicle monitoring, predictive maintenance, and AI-driven car intelligence** with Intelisync's revolutionary automotive AI solutions.
                     </p>
                     <button className="connect-button" onClick={() => navigate('/contact')}>
-                        <a href="/contact">Connect with Our Experts</a>
+                        <a href="/contact">Explore Our Car AI Solutions</a>
                         <img alt="Right Arrow" src={Arrow} />
                     </button>
                 </div>

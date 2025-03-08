@@ -23,6 +23,7 @@
   align-items: center;
   text-align: center;
   background: radial-gradient(circle at center, rgba(15, 206, 194, 0.5), black 40%);
+  
 }
 
 .large-header canvas {

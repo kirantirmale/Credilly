@@ -1,87 +1,61 @@
 import React from 'react';
-import { FaDatabase, FaServer, FaReact, FaNodeJs, FaCode, FaJs, FaPaintBrush, FaCloud } from 'react-icons/fa'; 
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiExpress, SiMongodb, SiHtml5, SiCss3, SiMui, SiJquery, SiNextdotjs } from "react-icons/si"; 
+import { FaCar, FaOilCan, FaWrench, FaChargingStation, FaCarCrash, FaTools, FaGasPump, FaCarSide, FaShieldAlt } from 'react-icons/fa';
 
 const services = [
     {
-        icon: <FaReact size={50} color="#61DBFB" />,
-        title: 'React.js',
-        description: 'A powerful frontend JavaScript library for building user interfaces.',
-        link: '/reactjs'
+        icon: <FaCar size={50} color="#FF5733" />, 
+        title: 'Car Sales',
+        description: 'Find the best deals on new and used cars.',
+        link: '/car-sales'
     },
     {
-        icon: <FaNodeJs size={50} color="#68A063" />,
-        title: 'Node.js',
-        description: 'A runtime for JavaScript to build scalable, high-performance applications.',
-        link: '/nodejs'
+        icon: <FaOilCan size={50} color="#FFA500" />, 
+        title: 'Oil Change',
+        description: 'Keep your engine healthy with our oil change service.',
+        link: '/oil-change'
     },
     {
-        icon: <SiExpress size={50} color="#000000" />,
-        title: 'Express.js',
-        description: 'Fast, minimal backend framework for Node.js applications.',
-        link: '/expressjs'
+        icon: <FaWrench size={50} color="#008080" />, 
+        title: 'Car Repair',
+        description: 'Reliable and affordable car repair services.',
+        link: '/car-repair'
     },
     {
-        icon: <SiMongodb size={50} color="#4DB33D" />,
-        title: 'MongoDB',
-        description: 'A NoSQL database for flexible, scalable, and high-performance applications.',
-        link: '/mongodb'
+        icon: <FaChargingStation size={50} color="#00CED1" />, 
+        title: 'EV Charging',
+        description: 'Fast and convenient electric vehicle charging stations.',
+        link: '/ev-charging'
     },
     {
-        icon: <FaJs size={50} color="#F7DF1E" />,
-        title: 'JavaScript (ES6+)',
-        description: 'Modern JavaScript features for better development efficiency.',
-        link: '/javascript'
+        icon: <FaCarCrash size={50} color="#DC143C" />, 
+        title: 'Accident Repair',
+        description: 'Comprehensive accident and collision repair services.',
+        link: '/accident-repair'
     },
     {
-        icon: <SiHtml5 size={50} color="#E34F26" />,
-        title: 'HTML5',
-        description: 'The latest version of the standard markup language for web pages.',
-        link: '/html5'
+        icon: <FaTools size={50} color="#4682B4" />, 
+        title: 'Car Maintenance',
+        description: 'Routine maintenance to keep your car in top condition.',
+        link: '/car-maintenance'
     },
     {
-        icon: <SiCss3 size={50} color="#1572B6" />,
-        title: 'CSS3',
-        description: 'Modern styling capabilities for responsive and beautiful web designs.',
-        link: '/css3'
+        icon: <FaGasPump size={50} color="#32CD32" />, 
+        title: 'Fuel Services',
+        description: 'Convenient refueling options for your vehicle.',
+        link: '/fuel-services'
     },
     {
-        icon: <FaCloud size={50} color="#FF6F00" />, 
-        title: 'REST APIs',
-        description: 'Design and develop scalable and efficient RESTful APIs.',
-        link: '/rest-api'
+        icon: <FaCarSide size={50} color="#A52A2A" />, 
+        title: 'Car Rentals',
+        description: 'Affordable car rentals for all your travel needs.',
+        link: '/car-rentals'
     },
     {
-        icon: <FaPaintBrush size={50} color="#FF4081" />,
-        title: 'UI/UX Design',
-        description: 'Creating intuitive and aesthetically pleasing user experiences.',
-        link: '/ui-ux-design'
-    },
-    {
-        icon: <RiTailwindCssFill size={50} color="#38B2AC" />,
-        title: 'Tailwind CSS',
-        description: 'A utility-first CSS framework for rapid UI development.',
-        link: '/tailwindcss'
-    },
-    {
-        icon: <SiMui size={50} color="#007FFF" />,
-        title: 'Material-UI (MUI)',
-        description: 'A popular React UI framework for creating modern, responsive designs.',
-        link: '/mui'
-    },
-    {
-        icon: <SiJquery size={50} color="#0769AD" />,
-        title: 'jQuery',
-        description: 'A fast, lightweight JavaScript library for simplifying DOM manipulation.',
-        link: '/jquery'
-    },
-    // {
-    //     icon: <SiNextdotjs size={50} color="#000000" />,
-    //     title: 'Next.js',
-    //     description: 'A React framework for server-side rendering and static site generation.',
-    //     link: '/nextjs'
-    // }
+        icon: <FaShieldAlt size={50} color="#FFD700" />, 
+        title: 'Car Insurance',
+        description: 'Protect your vehicle with our comprehensive insurance plans.',
+        link: '/car-insurance'
+    }
 ];
 
 const ServiceCard = () => {
