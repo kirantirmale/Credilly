@@ -174,7 +174,21 @@ const BookFlight = () => {
                                             setPhone(value);
                                             field.onChange(value);
                                         }}
-                                        inputStyle={{ backgroundColor: '#111827', color: 'white' }}
+                                        inputStyle={{
+                                            backgroundColor: '#111827',
+                                            color: 'white',
+                                            fontSize: '16px',
+                                            borderRadius: '8px',
+                                            marginRight: '20px',
+                                            paddingLeft: '50px',
+                                            height: "45px",
+                                        }}
+                                        dropdownStyle={{
+                                            backgroundColor: '#111827',
+                                            width: '230px',
+                                            marginRight: '20px',
+                                        }}
+
                                     />
                                 )}
                             />
@@ -244,9 +258,9 @@ const BookFlight = () => {
                             <div className="input-container">
                                 <select {...register("bank")} className={`select-field ${errors.bank ? "input-error" : ""}`} aria-describedby={errors.bank ? "bankError" : undefined}>
                                     <option value="">Bank</option>
-                                    <option value="Bank A">Bank A</option>
-                                    <option value="Bank B">Bank B</option>
-                                    <option value="Bank C">Bank C</option>
+                                    <option value="Standard Bank">Standard Bank</option>
+                                    <option value="Standard Chartered">Standard Chartered</option>
+                                    <option value="Barclays">Barclays</option>
                                 </select>
                                 {errors.bank && <p className="error-message">{errors.bank.message}</p>}
                             </div>
