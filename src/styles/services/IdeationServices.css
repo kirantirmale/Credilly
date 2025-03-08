@@ -45,7 +45,7 @@
 /* Services Section */
 .service-container {
     display: flex;
-    background:var(--bg-dark);
+    background:white;
     border-radius: 30px;
     border: 2px solid #333;
     overflow: hidden;

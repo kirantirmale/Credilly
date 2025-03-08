@@ -4,62 +4,63 @@ import AudiA1 from "../images/cars-big/audia1.jpg";
 import Toyota from "../images/cars-big/toyotacamry.jpg";
 import Bmw320 from "../images/cars-big/bmw320.jpg";
 import Benz from "../images/cars-big/benz.jpg";
-import Passat from "../images/cars-big/passatcc.jpg";
-const IdeationServices = () => {
-  const [selectedService, setSelectedService] = useState("MERN Stack Development");
 
+const IdeationServices = () => {
   const services = [
     {
       id: "01",
       title: "Golf6",
       icon: "🔍",
-      image: Golf6, // Add the image path here
-      description: "We specialize in full-stack development using MongoDB, Express.js, React.js, and Node.js to build scalable and high-performance applications."
+      image: Golf6,
+      description: "Volkswagen Golf 6 is known for its compact yet powerful design, featuring efficient fuel economy and a stylish exterior."
     },
     {
       id: "02",
-      title: "AudiA1",
+      title: "Audi A1",
       icon: "💡",
-      image: AudiA1, // Add the image path here
-      description: "We create secure and efficient RESTful APIs using Node.js and Express, ensuring seamless data communication for your applications."
+      image: AudiA1,
+      description: "The Audi A1 is a luxury hatchback with a sleek, sporty look and a tech-packed interior, offering a premium driving experience."
     },
     {
       id: "03",
-      title: "Toyota",
+      title: "Toyota Camry",
       icon: "🎯",
-      image: Toyota, // Add the image path here
-      description: "Implement robust authentication strategies with JWT, OAuth, and Firebase, ensuring secure user access and role-based authorization."
+      image: Toyota,
+      description: "Toyota Camry is a reliable sedan that provides excellent fuel efficiency, advanced safety features, and a comfortable ride."
     },
     {
       id: "04",
-      title: "Bmw320",
+      title: "BMW 320",
       icon: "🎨",
-      image: Bmw320, // Add the image path here
-      description: "Efficient MongoDB database structuring, indexing, and optimization to enhance performance and ensure data consistency."
+      image: Bmw320,
+      description: "BMW 320 is a sports sedan designed for performance enthusiasts, with dynamic handling and a refined interior."
     },
     {
       id: "05",
-      title: "Benz",
+      title: "Mercedes-Benz",
       icon: "📱",
-      image: Benz, // Add the image path here
-      description: "Deploy MERN applications on cloud platforms like AWS, Vercel, or Heroku, integrating CI/CD pipelines for automation."
+      image: Benz,
+      description: "Mercedes-Benz offers luxury, power, and advanced technology, ensuring an elite driving experience with premium comfort."
     }
   ];
 
+  // Set default selected service to "Golf6"
+  const [selectedService, setSelectedService] = useState(services[0].title);
+
   return (
     <div className="service">
-      <h1 className="title">MERN Stack Development Services We Offer</h1>
+      <h1 className="title">Premium Car Models We Offer</h1>
       <p className="description">
-        As a full-stack development team, we provide cutting-edge MERN stack solutions, ensuring high-quality web and mobile applications tailored to your business needs.
+        Explore our selection of high-end vehicles, each designed for ultimate performance, comfort, and cutting-edge technology.
       </p>
+
       <div className="service-container">
+        {/* Sidebar: List of Cars */}
         <div className="service-list">
           {services.map((service) => (
             <React.Fragment key={service.id}>
               <button
-                className={`service-button ${
-                  selectedService === service.title ? "active" : ""
-                }`}
+                className={`service-button ${selectedService === service.title ? "active" : ""}`}
                 onClick={() => setSelectedService(service.title)}
               >
                 {service.id}. {service.title}
@@ -68,21 +69,19 @@ const IdeationServices = () => {
             </React.Fragment>
           ))}
         </div>
+
+        {/* Car Details Section */}
         <div className="service-details">
           {services
             .filter((service) => service.title === selectedService)
             .map((service) => (
               <div key={service.id}>
-                <div className="service-header">
-                  {/* <span className="service-icon">{service.icon}</span>
-                  <h2 className="service-title">{service.title}</h2> */}
-                </div>
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="service-image" // Add a class for styling the image
-                />
-                {/* <p className="service-description">{service.description}</p> */}
+                {/* <div className="service-header">
+                  <span className="service-icon">{service.icon}</span>
+                  <h2 className="service-title">{service.title}</h2>
+                </div> */}
+                <img src={service.image} alt={service.title} className="service-image" />
+              
               </div>
             ))}
         </div>
