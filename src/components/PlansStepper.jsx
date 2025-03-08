@@ -59,7 +59,6 @@ const PlansStepper = () => {
                                 <p style={{ fontSize: '12px' }}><strong>APR:</strong> {plans.find(plan => plan.id === selectedPlan)?.apr}</p>
                                 <p style={{ fontSize: '12px' }}><strong>Installment:</strong> {plans.find(plan => plan.id === selectedPlan)?.installment}</p>
                                 <p style={{ fontSize: '12px' }}><strong>Residual:</strong> {plans.find(plan => plan.id === selectedPlan)?.residual}</p>
-                                <a href="#" className="btn" style={{ fontSize: '12px', padding: '10px 15px' }}>Select plan</a>
                             </div>
                             <img 
                                 src={plans.find(plan => plan.id === selectedPlan)?.image} 
