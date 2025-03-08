@@ -3,7 +3,7 @@ import * as yup from "yup";
 export const validationSchema = yup.object().shape({
     nationalId: yup
         .string()
-        .matches(/^\d{12}$/, "National ID must be exactly 12 digits")
+        .matches(/^\d{10}$/, "National ID must be exactly 10 digits")
         .required("National ID is required"),
     month: yup.string().required("Month is required"),
     year: yup.string().required("Year is required"),
