@@ -6,7 +6,11 @@ const SubmitedataStepper = () => {
   const handleSubmit = () => {
     localStorage.clear(); // Clear local storage
     toast.success('Data submitted successfully!'); // Show toast notification
-  };
+    setTimeout(() => {
+        window.location.reload(); // Refresh the page after 3 seconds
+    }, 3000);
+};
+
 
   return (
     <>
