@@ -1,0 +1,129 @@
+@import url('https://fonts.cdnfonts.com/css/ethnocentric');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-font: "Open Sans", serif;
+  --secondery-font: 'Ethnocentric Rg', sans-serif;
+  --logo-font: "Pacifico", serif;
+  --primary-color: rgb(6 255 240 );
+  --secondery-color: rgb(46, 147, 149);
+  --bg3-color: #635f5f92;
+  --text-color: #b1b1b1;
+  --bg-dark: #000;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.founder-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px;
+  background: radial-gradient(circle at left, rgb(8, 36, 42), rgba(0, 0, 0, 0) 20%),
+              radial-gradient(circle at right, rgb(8, 36, 42), rgba(0, 0, 0, 0) 20%);
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founder-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-container {
+  flex: 2;
+  padding-left: 50px;
+  text-align: left;
+}
+
+.heading-container {
+  display: flex;
+  align-items: center;
+  background-color: teal;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.heading-line {
+  width: 40px;
+  height: 2px;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.heading-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.founder-name {
+  font-family: var(--secondery-font);
+
+  margin-top: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(to right, gray, white);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.founder-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: gray;
+  margin-top: 20px;
+}
+
+.connect-button {
+  display: flex;
+  align-items: center;
+  background-color: teal;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.connect-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.button-arrow {
+  width: 20px;
+  margin-left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .founder-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-container {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .heading-container {
+    margin: 0 auto;
+  }
+}

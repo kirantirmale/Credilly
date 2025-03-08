@@ -1,0 +1,239 @@
+@import url('https://fonts.cdnfonts.com/css/ethnocentric');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-font: "Open Sans", serif;
+  --secondery-font: 'Ethnocentric Rg', sans-serif;
+  --logo-font: "Pacifico", serif;
+  --primary-color: rgb(6 255 240);
+  --secondery-color: rgb(46, 147, 149);
+  --bg3-color: #635f5f92;
+  --text-color: #b1b1b1;
+  --bg-dark: #000;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+
+
+
+.marquee-container {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    animation: borderAnimation 3s linear infinite; 
+}
+
+
+@keyframes borderAnimation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        border-color: white;
+        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+.Innovators{
+    font-size: 3rem;
+    font-family: var(--primary-font);
+    color: var(--text-color);
+}
+.marquee {
+    display: flex;
+    gap: 15px;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.reverse {
+    animation-direction: reverse;
+}
+
+/* Review Card */
+.review-card {
+    position: relative;
+    width: 256px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.review-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-image {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: 1px solid white;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: white; /* White text */
+}
+
+.user-username {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6); /* Slightly lighter white */
+}
+
+.review-text {
+    margin-top: 8px;
+    font-size: 14px;
+    color: white; /* White text */
+}
+
+/* Gradient effect */
+.gradient-left,
+.gradient-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 33%;
+    pointer-events: none;
+}
+
+.gradient-left {
+    left: 0;
+    background: linear-gradient(to right, black, transparent);
+}
+
+.gradient-right {
+    right: 0;
+    background: linear-gradient(to left, black, transparent);
+}
+@media screen and (max-width: 1024px) {
+    .marquee-container {
+        height: auto;
+        padding: 20px;
+    }
+
+    .Innovators {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .marquee {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .review-card {
+        width: 80%;
+        max-width: 320px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .marquee-container {
+        height: auto;
+        padding: 20px;
+    }
+
+    .Innovators {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .marquee {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        animation: none;
+    }
+
+    .review-card {
+        width: 90%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .user-image {
+        width: 48px;
+        height: 48px;
+    }
+
+    .review-text {
+        font-size: 12px;
+    }
+
+    .gradient-left,
+    .gradient-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Innovators {
+        font-size: 1.8rem;
+        padding: 10px;
+    }
+
+    .marquee {
+        flex-direction: column;
+    }
+
+    .review-card {
+        width: 95%;
+        max-width: 260px;
+        padding: 12px;
+    }
+
+    .user-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .review-text {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,135 @@
+@import url('https://fonts.cdnfonts.com/css/ethnocentric');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-font: "Open Sans", serif;
+    --secondery-font: 'Ethnocentric Rg', sans-serif;
+    --logo-font: "Pacifico", serif;
+    --primary-color: rgb(6 255 240);
+    --secondery-color: rgb(46, 147, 149);
+    --bg3-color: #635f5f92;
+    --text-color: #b1b1b1;
+    --bg-dark: #000;
+    --white: #fff;
+    --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.service {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: var(--secondery-font);
+    margin-bottom: 20px;
+    /* color: var(--white); */
+    background:  linear-gradient(90deg, #2d2d2d, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.description {
+    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    opacity: 0.8;
+    color: var(--white);
+
+}
+
+/* Services Section */
+.service-container {
+    display: flex;
+    background:var(--bg-dark);
+    border-radius: 30px;
+    border: 2px solid #333;
+    overflow: hidden;
+}
+
+/* Left Side - Service List */
+.service-list {
+    width: 40%;
+    background: linear-gradient(to left, #115e59, black);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-button {
+    text-align: left;
+    padding: 12px;
+    border: none;
+    background: none;
+    color: #aaa;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.service-button.active {
+    color: white;
+    font-weight: bold;
+}
+
+.service-button:hover {
+    color: white;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #555;
+    margin: 10px 0;
+}
+
+/* Right Side - Service Details */
+.service-details {
+    width: 60%;
+    padding: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.service-icon {
+    font-size: 36px;
+}
+
+.service-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--white);
+
+}
+
+.service-description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+    }
+
+    .service-list,
+    .service-details {
+        width: 100%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.cdnfonts.com/css/ethnocentric');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-font: "Open Sans", serif;
+  --secondery-font: 'Ethnocentric Rg', sans-serif;
+  --logo-font: "Pacifico", serif;
+  --primary-color: rgb(6 255 240 );
+  --secondery-color: rgb(46, 147, 149);
+  --bg3-color: #635f5f92;
+  --text-color: #b1b1b1;
+  --bg-dark: #000;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+
+.services-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.service-titlee {
+    font-family: var(--secondery-font);
+    font-size: 4rem;
+    font-weight: bold;
+    background:  linear-gradient(90deg, #2d2d2d, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.ser-p{
+    color: white;
+    font-size: 12px;
+    margin-top: 15px;
+
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 100px auto;
+}
+
+.service-card {
+    position: relative;
+    background: linear-gradient(to bottom right, #081218, #03272e);
+    padding: 30px;
+    text-align: left;
+    height: 260px;
+    transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+    border-radius: 25px;
+    color: #000;
+}
+
+.icon {
+    font-size: 50px;
+    color: white;
+}
+
+.service-card h2 {
+    font-size: 20px;
+    color: white;
+}
+
+.service-card p {
+    font-size: 10px;
+    color: white;
+}
+
+.service-card:hover {
+    background: linear-gradient(45deg, #000, #014755, #014541);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 10px #0f312e;
+    z-index: 10;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.services-container a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.cdnfonts.com/css/ethnocentric');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  --primary-font:"Open Sans", serif ;
+  --secondery-font:'Ethnocentric Rg', sans-serif ;
+  --logo-font: "Pacifico", serif ;
+  --primary-color:rgb(32, 226, 226) ;
+  --secondery-color:rgb(46, 147, 149);
+  --bg3-color:#b1b1b1;
+  --text-color: #b1b1b1;
+  --bg-dark: #000;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.footer {
+  background: black url('/src/images/footer/Arc.png') center center / cover no-repeat;
+  color: #ccc;
+  padding: 80px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #14b8a6;
+}
+
+.footer-text {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  color: #14b8a6;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: white;
+}
+
+.footer-heading {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-list li:hover {
+  color: #14b8a6;
+}

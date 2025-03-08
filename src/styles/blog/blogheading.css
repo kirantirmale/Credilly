@@ -1,0 +1,96 @@
+@import url('https://fonts.cdnfonts.com/css/ethnocentric');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Pacifico&display=swap');
+
+:root {
+    --primary-font: "Open Sans", serif;
+    --secondery-font: 'Ethnocentric Rg', sans-serif;
+    --logo-font: "Pacifico", serif;
+    --primary-color: rgb(32, 226, 226);
+    --secondery-color: rgb(46, 147, 149);
+    --bg3-color: #b1b1b1;
+    --text-color: #b1b1b1;
+    --bg-dark: #000;
+    --white: #fff;
+    --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.main-titlee {
+    margin-top: -220px;
+    font-size: 4rem;
+    /* font-weight: 700; */
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--white);
+    font-family: var(--secondery-font);
+    background:  linear-gradient(90deg, #2d2d2d, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-titlee {
+        font-size: 2.5rem;
+        margin-top: -150px;
+    }
+    
+    .connect-buttonn {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-titlee {
+        font-size: 3rem;
+        margin-top: -100px;
+    }
+    
+    .connect-buttonn {
+        font-size: 12px;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-titlee {
+        font-size: 2.5rem;
+        margin-top: -80px;
+    }
+
+    .connect-buttonn {
+        font-size: 10px;
+        padding: 6px 16px;
+    }
+}
+
+.connect-buttonn {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 2px solid gray;
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s, border 0.3s;
+    text-decoration: none;
+    margin: auto;
+}
+
+.connect-buttonn:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.connect-buttonn a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}

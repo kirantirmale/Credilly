@@ -1,0 +1,47 @@
+@import url('https://fonts.cdnfonts.com/css/ethnocentric');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  --primary-font:"Open Sans", serif ;
+  --secondery-font:'Ethnocentric Rg', sans-serif ;
+  --logo-font: "Pacifico", serif ;
+  --primary-color:rgb(32, 226, 226) ;
+  --secondery-color:rgb(46, 147, 149);
+  --bg3-color:#b1b1b1;
+  --text-color: #b1b1b1;
+  --bg-dark: #000;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+
+.scroll-up {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 8px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .scroll-up:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-170px * 6));
+    }
+  }
+  
+  

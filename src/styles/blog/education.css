@@ -1,0 +1,225 @@
+.containerrr {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    max-width: 1280px;
+    margin-top: 50px;
+    margin: auto;
+}
+.containerr{
+    padding:  80px 0px;
+    margin-bottom: 40px;
+    margin: 15px;
+}
+.containerr h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+/* Larger screens: Sidebar on the left, content on the right */
+@media (min-width: 768px) {
+    .containerrr {
+        flex-direction: row;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    width: 100%;
+    max-width: 100%;
+    background: transparent;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Adjust sidebar width on large screens */
+@media (min-width: 768px) {
+    .sidebar {
+        max-width: 30%;
+    }
+}
+
+/* Sidebar list items */
+.sidebar ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 16px;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #fde68a; 
+    background: transparent;
+    color:white;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.sidebar li:hover {
+    color: #14b8a6; 
+}
+
+/* Active sidebar item */
+.sidebar li.active {
+    color: #14b8a6;
+    font-weight: bold;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    box-shadow: rgb(6 255 240 ) 0px 0px 17px 2px inset, 
+                rgb(6 255 240 ) 0px 0px 17px 2px;
+}
+
+/* Main content */
+.main-content {
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid teal;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+/* Adjust width on larger screens */
+@media (min-width: 768px) {
+    .main-content {
+        max-width: 70%;
+    }
+}
+
+/* Content Box */
+.content-box {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to bottom left, teal, black);
+    border-radius: 20px;
+    overflow-y: hidden;
+    max-height: 100vh;
+}
+
+/* Content info */
+.content-box .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0px 0px;
+}
+
+@media (min-width: 1024px) {
+    .content-box .info {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+/* Responsive images */
+/* Responsive images */
+.info img {
+    width: 100%;
+    max-width: 300px; /* Increased from 230px */
+    height: auto;
+    border-radius: 20px;
+    /* padding-bottom: 20px; */
+}
+
+@media (min-width: 768px) {
+    .info img {
+        max-width: 350px; /* Increased from 230px */
+    }
+}
+
+@media (min-width: 1024px) {
+    .info img {
+        max-width: 400px; /* Larger images for bigger screens */
+    }
+}
+
+/* Project image inside content */
+.project-image {
+    width: 100%;
+    max-width: 320px; /* Increased from 230px */
+    border-radius: 20px;
+}
+
+@media (min-width: 768px) {
+    .project-image {
+        max-width: 380px; /* Increased from 230px */
+    }
+}
+
+@media (min-width: 1024px) {
+    .project-image {
+        max-width: 450px; /* Larger images for larger screens */
+    }
+}
+
+/* Text styles */
+.info p {
+    color: lightgray;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.tags span {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    background: transparent;
+    color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Button */
+.btn {
+    background-color: var(--primary-color);
+    color: black;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.btn:hover {
+    background: #0d9488;
+    color: white;
+}
+/* Align text and image in row for larger screens */
+@media (min-width: 1024px) {
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .text {
+        flex: 1;
+        padding-right: 20px; /* Adds spacing between text and image */
+    }
+    .project-image {
+        width: 120px;
+        max-width: 230px;
+        border-radius: 20px;
+    }
+}

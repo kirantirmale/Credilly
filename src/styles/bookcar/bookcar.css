@@ -1,0 +1,316 @@
+@import url('https://fonts.cdnfonts.com/css/ethnocentric');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-font: "Open Sans", serif;
+  --secondery-font: 'Ethnocentric Rg', sans-serif;
+  --logo-font: "Pacifico", serif;
+  --primary-color: rgb(6 255 240 );
+  --secondery-color: rgb(46, 147, 149);
+  --bg3-color: #635f5f92;
+  --text-color: #b1b1b1;
+  --bg-dark: #000;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.user-contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 32px 16px;
+  gap: 35px;
+}
+.radio-main{
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  /* justify-content: space-between; */
+}
+
+/* Input Field Container */
+.input-container {
+  position: relative;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  bottom: -18px; /* Position below the input field */
+  left: 0;
+  width: 100%;
+}
+
+/* Error styles for input fields */
+.input-field.input-error, .select-field.input-error {
+  border: 1px solid red;
+  box-shadow: 0 0 5px red;
+}
+
+/* Styling for select inputs */
+.select-field {
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+/* Other existing styles remain unchanged */
+
+.contact-info a {
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .user-contact-section {
+    flex-direction: row;
+    padding: 32px 64px;
+  }
+}
+
+.input-error {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+/* Input Fields */
+.input-field,
+.select-field {
+  width: 100%;
+  padding: 12px;
+  background-color: #111827;
+  opacity: 0.8;
+  color: white;
+  border: 1px solid #4b5563;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.input-field::placeholder,
+.textarea-field::placeholder {
+  color: #9ca3af;
+}
+
+.input-field:focus,
+.textarea-field:focus,
+.select-field:focus {
+  outline: none;
+  border-color: #0d9488;
+  /* box-shadow: 0 0 5px #0d9488; */
+}
+
+/* Form Container */
+.form-container {
+  width: 100%;
+  max-width: 1130px;
+  background: linear-gradient(to top, #0d9488, black);
+  padding: 24px;
+  border: 2px solid #374151;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-title {
+  font-size: 24px;
+  color: #d1d5db;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .form-title {
+    font-size: 30px;
+  }
+}
+
+.form-description {
+  font-size: 14px;
+  color: #d1d5db;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+/* Grid Container for the Inputs */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 column for smaller screens */
+  gap: 46px;
+  margin-bottom: 16px;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
+  }
+}
+
+.input-field,
+.select-field {
+  flex: 1 1 200px;
+  max-width: 100%;
+}
+
+/* Button */
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.submit-btn button {
+  padding: 12px 24px;
+  background-color: #0d9488;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.submit-btn button:hover {
+  background-color: #0f766e;
+}
+
+/* Add the following styles */
+.select-field {
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+/* Radio Group Container */
+.radio-group {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 10px; /* Adds space between radio buttons */
+  margin-top: 16px;
+  margin-bottom: 16px; /* Adds space below each radio group */
+}
+
+/* Styling for Radio Inputs */
+.radio-group input[type="radio"] {
+  accent-color: #0d9488; /* Changes the color of the radio button */
+  width: 20px;
+  height: 20px;
+  margin-right: 2px; /* Adds space between the radio button and label */
+}
+
+/* Styling for Labels */
+.radio-group label {
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Focus effect for radio buttons */
+.radio-group input[type="radio"]:focus {
+  outline: none;
+}
+.Here{
+  margin-top: 25px;
+  color: white;
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 2px solid var(--primary-color);
+  font-size: 1.3rem;
+
+}
+.Here:hover {
+  border: 2px solid var(--primary-color);
+  
+  color: var(--primary-color);
+  /* transition: all 0.3s; */
+
+}
+
+
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+  accent-color: #007bff; /* Color of the checkbox */
+}
+
+.terms-checkbox label {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.terms-checkbox label a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.terms-checkbox label a:hover {
+  text-decoration: underline;
+}
+
+.terms-checkbox input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.terms-checkbox .error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.phone-input {
+  background-color: #111827; 
+  color: white; /* White text */
+  border: 1px solid #374151; /* Optional: add border for better visibility */
+  font-size: 14px;
+  border-radius: 5px;
+  width: 100%;
+ 
+  
+}
+
+.phone-input:focus {
+  border-color: #fff; /* Optional: change border color when focused */
+}
+
+.input-error {
+  border-color: red; /* Optional: show red border for errors */
+}
+
+.error-message {
+  color: red; /* Display error messages in red */
+  font-size: 12px;
+}
