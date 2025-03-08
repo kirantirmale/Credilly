@@ -13,7 +13,7 @@ export const hijriYears = Array.from({ length: 100 }, (_, index) => 1446 + index
 
 
 
-const BookFlight = () => {
+const BookCar = () => {
     const {
         register,
         handleSubmit,
@@ -53,7 +53,7 @@ const BookFlight = () => {
     const handleNationalIdChange = (e) => {
         const id = e.target.value;
         setNationalId(id);
-        setIsHijri(id.startsWith("10"));
+        setIsHijri(id.startsWith("1"));
     };
 
     const handleTermsChange = () => {
@@ -148,12 +148,12 @@ const BookFlight = () => {
                             {errors.year && <p className="error-message">{errors.year.message}</p>}
                         </div>
 
+
                         {/* Make */}
                         <div className="input-container">
                             <input {...register("make")} placeholder="Make" className={`input-field ${errors.make ? "input-error" : ""}`} />
                             {errors.make && <p className="error-message">{errors.make.message}</p>}
                         </div>
-
                         {/* Phone Input */}
                         <div className="input-container">
                             <Controller
@@ -301,4 +301,4 @@ const BookFlight = () => {
     );
 };
 
-export default BookFlight;
+export default BookCar;
