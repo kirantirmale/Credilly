@@ -5,6 +5,7 @@ import Leadership from "../components/Leadership";
 import Founder from "../components/Founder";
 import BookCar from "../components/BookCar";
 import IdeationServices from "../components/IdeationServices";
+import ServiceCard from "../components/ServicecCard";
 
 
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
       <Founder/>
       <Skils />
       <IdeationServices/>
+      <ServiceCard/>
       {/* <Leadership/> */}
     </>
   );
