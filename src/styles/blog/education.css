@@ -188,7 +188,7 @@
 }
 
 /* Button */
-.btn {
+/* .btn {
     background-color: var(--primary-color);
     color: black;
     padding: 10px 24px;
@@ -204,7 +204,7 @@
 .btn:hover {
     background: #0d9488;
     color: white;
-}
+} */
 /* Align text and image in row for larger screens */
 @media (min-width: 1024px) {
     .info {

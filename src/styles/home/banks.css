@@ -75,7 +75,6 @@
     animation-direction: reverse;
 }
 
-/* Review Card */
 .review-card {
     position: relative;
     width: 256px;
@@ -92,7 +91,6 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* User Info */
 .user-info {
     display: flex;
     align-items: center;
@@ -124,7 +122,6 @@
     color: white; /* White text */
 }
 
-/* Gradient effect */
 .gradient-left,
 .gradient-right {
     position: absolute;
@@ -218,9 +215,6 @@
         padding: 10px;
     }
 
-    .marquee {
-        flex-direction: column;
-    }
 
     .review-card {
         width: 95%;

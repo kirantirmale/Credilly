@@ -28,11 +28,12 @@ const ColorlibStepIcon = (props) => {
         return null;
     }
   };
-
+  
+  
   return (
     <div
       style={{
-        color: active ? "orange" : completed ? "green" : "gray",
+        color: active ? "orange" : completed ? "#3ffffc" : "#3ffffc",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -76,7 +77,7 @@ const MainStepper = () => {
           <Step key={index}>
             <StepLabel
               StepIconComponent={ColorlibStepIcon}
-              sx={{ "& .MuiStepLabel-label": { color: "white" } }}
+              sx={{ "& .MuiStepLabel-label": { color: "#3ffffc" } }}
             >
               {label}
             </StepLabel>

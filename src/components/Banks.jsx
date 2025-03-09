@@ -7,19 +7,19 @@ import riyadhbankpng from "../images/bank/riyadhbankpng.png";
 import SNBLogo from "../images/bank/SNBLogo.jpg";
 
 const reviews = [
-  { name: "Al Rajhi Bank", username: "@dipak", body: "Exceptional MERN Stack expertise! Built a scalable full-stack application efficiently.", img: alrajhibanklogo },
-  { name: "ANB Bank" , username: "@nilesh", body: "Highly skilled in React.js and Node.js! Delivered a seamless UI with robust backend integration.", img: anbBankLogo },
-  { name: "Bank Al Jazira", username: "@janki", body: "The best MongoDB and Express.js implementation I've seen. Optimized queries for better performance.", img: BankAljazira },
-  { name: "Emirates NBD" , username: "@gopal", body: "Built a high-performing web app with React and Redux. Code quality was outstanding!", img: emiratesnbdlogok },
-  { name: "Riyadh Bank" , username: "@Rohan", body: "A MERN stack pro! Developed an efficient and scalable solution with top-notch security.", img: riyadhbankpng },
-  { name: "SNB Bank" , username: "@hitesh", body: "Mastered full-stack development! Delivered a feature-rich, high-speed web app.", img: SNBLogo },
+  { name: "Al Rajhi Bank", username: "@Al", body: "Exceptional MERN Stack expertise! Built a scalable full-stack application efficiently.", img: alrajhibanklogo },
+  { name: "ANB Bank" , username: "@ANB", body: "Highly skilled in React.js and Node.js! Delivered a seamless UI with robust backend integration.", img: anbBankLogo },
+  { name: "Bank Al Jazira", username: "@Jazira", body: "The best MongoDB and Express.js implementation I've seen. Optimized queries for better performance.", img: BankAljazira },
+  { name: "Emirates NBD" , username: "@Emirates", body: "Built a high-performing web app with React and Redux. Code quality was outstanding!", img: emiratesnbdlogok },
+  { name: "Riyadh Bank" , username: "@Riyadh", body: "A MERN stack pro! Developed an efficient and scalable solution with top-notch security.", img: riyadhbankpng },
+  { name: "SNB Bank" , username: "@SNB", body: "Mastered full-stack development! Delivered a feature-rich, high-speed web app.", img: SNBLogo },
 ];
 
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
-const Skils = () => {
+const Banks = () => {
   return (
     <div>
       <div className="marquee-container">
@@ -61,4 +61,4 @@ const Skils = () => {
   );
 };
 
-export default Skils;
+export default Banks;

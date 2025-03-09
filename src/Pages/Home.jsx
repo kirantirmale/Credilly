@@ -1,11 +1,11 @@
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
-import Skils from "../components/Skils";
+
 import Leadership from "../components/Leadership";
 import Founder from "../components/Founder";
 import BookCar from "../components/BookCar";
 import IdeationServices from "../components/IdeationServices";
 import ServiceCard from "../components/ServicecCard";
+import Banks from "../components/Banks";
 
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
       <Hero />
       <BookCar/>
       <Founder/>
-      <Skils />
+      <Banks />
       <IdeationServices/>
       <ServiceCard/>
       {/* <Leadership/> */}

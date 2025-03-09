@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Company Branding Section */}
         <div className="footer-section">
           <h2 className="footer-title">Credily</h2>
           <p className="footer-text">
