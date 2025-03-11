@@ -1,0 +1,107 @@
+{
+    "KOREAN": ["HYUNDAI", "GENESIS", "KIA", "DAEWOO", "SSANGYONG", "SAMSUNG"],
+    "JAPANESE": ["HONDA", "TOYOTA", "ACURA", "DAIHATSU", "DATSUN", "HINO", "ISUZU", "LEXUS", "MAZDA", "MITSUBISHI", "NISSAN", "SUBARU", "SUZUKI", "YAMAHA"],
+    "EUROPEAN": {
+      "ASTON MARTIN": ["UK"],
+      "BENTLEY": ["UK"],
+      "BUGATTI": ["FRANCE"],
+      "FERRARI": ["ITALY"],
+      "LAMBORGHINI": ["ITALY"],
+      "MASERATI": ["ITALY"],
+      "ROLLS ROYCE": ["LONDON"],
+      "ABARTH": ["ITALY"],
+      "SPYKER": ["NETHERLANS"],
+      "ALFA ROMEO": ["ITALY"],
+      "ASTRA": ["ITALY"],
+      "CITROEN": ["FRANCE"],
+      "FIAT": ["ITALY"],
+      "JAGUAR": ["UK"],
+      "KOENIGSEGG": ["SWEDEN"],
+      "LOTUS": ["UK"],
+      "PEUGEOT": ["FRANCE"],
+      "RENAULT": ["FRANCE"],
+      "SAAB": ["SWEDEN"],
+      "SEAT": ["SPAIN"],
+      "SKODA": ["CZECH REPUBLIC"],
+      "VOLVO": ["SWEDEN"]
+    },
+    "AMERICAN": ["CHEVROLET", "BUICK", "CADILLAC", "CHEROKEE", "CHRYSLER", "DODGE", "FORD", "GMC", "HUMMER", "LINCOLN", "LUCID", "MUSTANG", "RAM", "RIVIAN", "TESLA"],
+    "CHINESE": {
+      "BRILLIANCE": [],
+      "BYD": [],
+      "CHANGAN": [],
+      "CHERY": [],
+      "FAW": [],
+      "GAC": [],
+      "GEELY": [],
+      "GONOW": [],
+      "GREAT WALL": [],
+      "HAVAL": [],
+      "JAC": [],
+      "LIFAN": [],
+      "MG": [],
+      "SMART": [],
+      "JMC": [],
+      "ANKAI": [],
+      "CHANGJIANG": [],
+      "CHENG LONG": [],
+      "FOTON": [],
+      "GOLDEN DRAGON": [],
+      "HIGER": [],
+      "KING LONG": [],
+      "CFMOTO": [],
+      "SAIC": ["SHANGHAI", "SUNWIN", "YUEJIN", "XIAMEN", "YUTONG", "ZHENGZHOU", "ZHONGTONG", "BIAC", "JETOUR"]
+    },
+    "GERMAN": {
+      "AUDI": [],
+      "BMW": [],
+      "MAYBACH": [],
+      "MERCEDES": [],
+      "PORSCHE": [],
+      "BORGWARD": [],
+      "DYNAPAC": [],
+      "HAKO": [],
+      "MINI COOPER": [],
+      "OPEL": [],
+      "VOLKSWAGEN": [],
+      "WIESMANN": [],
+      "NEOPLAN": [],
+      "SETRA": [],
+      "MAN": []
+    },
+    "INDIA": {
+      "TATA": ["INDIA"],
+      "ASHOK LEYLAND": [],
+      "MAHINDRA": ["INDIA"],
+      "BAJAJ": ["INDIA"],
+      "FORCE": [],
+      "EICHER": []
+    },
+    "AFRICA": {
+      "MCV": []
+    },
+    "SWEDEN": {
+      "KOENIGSEGG": [],
+      "SAAB": [],
+      "VOLVO": [],
+      "LYNK & CO": []
+    },
+    "AUSTRIA": {
+      "KTM": []
+    },
+    "GERMANY": {
+      "COBUS": [],
+      "IVECO": [],
+      "SANOS": [],
+      "SCANIA": [],
+      "LYNK & CO": [],
+      "TAM": []
+    },
+    "MACEDONIA": {
+      "SANOS": []
+    },
+    "SLOVENIA": {
+      "TAM": []
+    }
+  }
+  

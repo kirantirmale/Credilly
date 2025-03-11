@@ -15,6 +15,59 @@
   --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
+
+.react-select__input {
+  padding: 3px 0px !important;
+  font-size: 15px !important;
+  color: white !important;
+}
+
+/* Style for the select dropdown container */
+.react-select__control {
+  background-color: #111827 !important;
+  opacity: 0.8;
+  color: white;
+  border: 1px solid #4b5563 !important;
+  border-radius: 10px !important;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+/* Placeholder color */
+.react-select__placeholder {
+  color: #f7faff !important;
+}
+
+/* Focus effect */
+.react-select__control:focus,
+.react-select__control--is-focused {
+  border-color: #0d9488 !important;
+  box-shadow: 0 0 5px rgba(13, 148, 136, 0.5) !important;
+}
+
+/* Dropdown menu background */
+.react-select__menu {
+  background-color: #111827 !important;
+  border: 1px solid #4b5563 !important;
+  border-radius: 10px;
+}
+
+/* Dropdown options */
+.react-select__option {
+  color: white !important;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.react-select__option:hover,
+.react-select__option--is-focused {
+  background-color: #0d9488 !important;
+  color: white !important;
+}
+
+
+
 .user-contact-section {
   display: flex;
   flex-direction: column;
@@ -92,7 +145,7 @@
 
 .input-field::placeholder,
 .textarea-field::placeholder {
-  color: #9ca3af;
+  color: white !important;
 }
 
 .input-field:focus,
@@ -297,7 +350,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: 0.3s;
 }

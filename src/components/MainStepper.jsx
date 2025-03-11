@@ -11,32 +11,32 @@ import SubmitedataStepper from "./SubmitedataStepper";
 
 const steps = ["Select Car", "Choose Plan", "Upload Documents", "Submit Data"];
 
-const ColorlibStepIcon = (props) => {
-  const { active, completed, icon } = props;
+const ColorlibStepIcon = ({ active, completed, icon }) => {
+  const color = active ? "orange" : completed ? "#3ffffc" : "#a0a0a0"; // Ensure active color is orange
 
   const getIcon = (icon) => {
     switch (icon) {
       case 1:
-        return <LocalCarWashIcon fontSize="large" />;
+        return <LocalCarWashIcon fontSize="inherit" />;
       case 2:
-        return <CheckCircleIcon fontSize="large" />;
+        return <CheckCircleIcon fontSize="inherit" />;
       case 3:
-        return <DescriptionIcon fontSize="large" />;
+        return <DescriptionIcon fontSize="inherit" />;
       case 4:
-        return <DoneIcon fontSize="large" />;
+        return <DoneIcon fontSize="inherit" />;
       default:
         return null;
     }
   };
-  
-  
+
   return (
     <div
       style={{
-        color: active ? "orange" : completed ? "#3ffffc" : "#3ffffc",
+        color: color, // Dynamic color applied
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        fontSize: "30px",
       }}
     >
       {getIcon(icon)}
@@ -64,7 +64,7 @@ const MainStepper = () => {
       case 2:
         return <UploadStepper handleNext={handleNext} handleBack={handleBack} />;
       case 3:
-        return  <SubmitedataStepper/>;
+        return <SubmitedataStepper />;
       default:
         return null;
     }
@@ -73,32 +73,37 @@ const MainStepper = () => {
   return (
     <Box sx={{ color: "white", p: 3 }}>
       <Stepper alternativeLabel activeStep={activeStep}>
-        {steps.map((label, index) => (
-          <Step key={index}>
-            <StepLabel
-              StepIconComponent={ColorlibStepIcon}
-              sx={{ "& .MuiStepLabel-label": { color: "#3ffffc" } }}
-            >
-              {label}
-            </StepLabel>
-          </Step>
-        ))}
+        {steps.map((label, index) => {
+          const labelColor = index === activeStep ? "orange" : index < activeStep ? "#3ffffc" : "#a0a0a0";
+
+          return (
+            <Step key={index}>
+              <StepLabel
+                StepIconComponent={(props) => <ColorlibStepIcon {...props} />}
+                sx={{
+                  "& .MuiStepLabel-label": {
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                    color: labelColor, // Ensure step text matches icon color
+                  },
+                  "& .Mui-active": {
+                    color: "orange !important", // Force active color to orange
+                  },
+                }}
+              >
+                {label}
+              </StepLabel>
+            </Step>
+          );
+        })}
       </Stepper>
       {renderStepContent(activeStep)}
 
       <Box sx={{ display: "flex", justifyContent: "space-between", mt: 3 }}>
-        <Button
-          disabled={activeStep === 0}
-          onClick={handleBack}
-          variant="contained"
-        >
+        <Button disabled={activeStep === 0} onClick={handleBack} variant="contained">
           Previous
         </Button>
-        <Button
-          disabled={activeStep === steps.length - 1}
-          onClick={handleNext}
-          variant="contained"
-        >
+        <Button disabled={activeStep === steps.length - 1} onClick={handleNext} variant="contained">
           Next
         </Button>
       </Box>

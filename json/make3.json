@@ -1,0 +1,42 @@
+{
+    "American": [
+      "Archer", "Ben Ford", "BMW", "BUICK", "CADILLAC", "CHEROKEE", "CHEVROLET", "CHRYSLER", "DODGE", "FORD", "Ford Lincoln", "General Motors", "GMC", "HAMMER", "HINO", "HUMMER", "Indian", "INTERNATIONAL", "JEEP", "JMC", "KTM", "LINCOLN", "LUCID", "MERCURY", "MOTORBIKE", "MOTORCYCLE", "Mustang", "OLDSMOBILE", "PLYMOUTH", "PONTIAC", "RAM", "RAM MOTORS", "Ranger", "Rivian", "Sila", "SONOMA", "SUZUKI", "TESLA", "WRANGLER", "YAMAHA"
+    ],
+    "China": [
+      "BAIC", "Bajaj", "BLK", "BYD", "CFMOTO", "Chang dong", "CHANGAN", "CHERY", "clear", "DONGFENG", "EXEED", "FAW", "FOTON", "GAC", "GEELY", "GENESIS", "GMC", "GREAT WALL", "Guangzhou", "HAVAL", "HONGQI", "Huanghai", "HYUNDAI", "JAC", "JAECOO", "Jbeili", "JETOUR", "JMC", "KING LONG", "LEXUS", "Lynk & Co", "MAXUS", "MG", "OMODA", "SAIC", "SAIC Motor", "SHANGHAI", "SHANGYUNG", "SINOTRUK", "SSANGYONG", "TAM", "VOLKSWAGEN", "YUTONG", "ZHONG YUNG", "ZOOMILON", "ZX AUOTO"
+    ],
+    "Chinese": [
+      "BACKHOE", "LONKING", "MAXIMAL", "SINOTRUCK"
+    ],
+    "European": [
+      "ABARTH", "ALFA ROMEO", "ASIA", "ASTON MARTIN", "ASTRA", "AUDI", "BMW", "BOMAGE", "Borgward", "BUGATTI", "CITREON", "Citroen", "DYNAPAC", "FERRARI", "FIAT", "Folks", "HAKO", "JAGUAR", "JEEP", "KOENIGSEGG", "LAMBORGHINI", "LAND ROVER", "LEXUS", "LOTUS", "MAN", "MASERATI", "MAYBACH", "MCLAREN", "MERCEDES", "Mercedes Benz", "MG", "MINI COOPER", "OPEL", "PEUGEOT", "PORSCHE", "RANGE ROVER", "RENAULT", "ROVER", "SAAB", "SEAT", "SIAT", "SKODA", "SMART", "SUBARU", "VOLKSWAGEN", "VOLVO", "WIESMANN"
+    ],
+    "Exotics": [
+      "ASTON MARTIN", "BUGATTI", "FERRARI", "LAMBORGHINI", "MCLAREN", "MG", "PAGANI", "SPYKER"
+    ],
+    "France": [
+      "INEOS"
+    ],
+    "Japanese": [
+      "Acura", "DAIHATSU", "DATSUN", "HINO", "HONDA", "INFINITI", "ISUZU", "LEXUS", "MAZDA", "MAZDA2", "MITSUBISHI", "NISSAN", "NISSAN_DEL", "Soueast", "SUBARU", "SUZUKI", "TOYOTA", "ZHENGZHOU", "ZHENGZHOU NISSAN"
+    ],
+    "Korean": [
+      "DAEWOO", "GENESIS", "HONDA", "HYUNDAI", "KIA", "SHANGYUNG"
+    ],
+    "Luxury": [
+      "ASTON MARTIN", "AUDI", "Baghani", "BENTLEY", "BMW", "BUGATTI", "FERRARI", "LAMBORGHINI", "LEXUS", "MASERATI", "MAYBACH", "Mc Laren", "MERCEDES", "PAGANI", "PORSCHE", "ROLLS ROYCE", "ROLLS-ROYCE"
+    ],
+    "Netherlands": [
+      "TERBERG"
+    ],
+    "Non-Japanese & Non-American Makes": [
+      "ADMIRAL", "BEI FANJ BEINSHI", "CHANGAN", "CHIVING", "CITREON", "CMC", "DAEWOO", "DEER", "FAW", "FORCE", "FOTON", "GENAJ LENG", "GONOW", "GRAND TIGER", "GREAT WALL", "HAPI ZELJECKSON", "HAVAL", "HIGER", "HOPI JUNK NAN", "HYUNDAI", "INTERNATIONAL", "IVECO", "JAC", "JENJO", "JMC", "KIA", "KYLIN", "LIFAN", "LONGKING", "LORY", "MAHINDRA", "MAXUS", "MERCEDES", "MG", "QUNAW", "RENAULT", "SAIC", "SAMSUNG", "SHANGHAI", "SKODA", "SSANGYONG", "SUPV", "TATA", "VOLKSWAGEN", "YUEJIN", "ZHONG YUNG", "ZX AUOTO"
+    ],
+    "Non-Korean Make": [
+      "KING LONG", "MCV"
+    ],
+    "Non-Korean Makes": [
+      "ANHUI", "ANKAI", "ASHOK LEYLAND", "ASIA", "BUS", "CARTIER", "CHANGAN", "CHANGJIANG", "CHENG LONG", "CHEVROLET", "COBUS", "DIENA", "EICHER", "FORCE", "FOTON", "FREIGHTLINER", "GMC", "GOLDEN DRAGON", "GONOW", "GREAT WALL", "HIGER", "HINO", "INTERNATIONAL", "ISUZU", "IVECO", "JAC", "JMC", "KING LONG", "LONG HIO", "MAN", "MAZDA", "MERCEDES", "MITSUBISHI", "MOTORCYCLE", "NEOPLAN", "NISSAN", "PEUGEOT", "SANOS", "SETRA", "SHANGHAI", "SUNWIN", "SUZUKI", "TATA", "THOMAS", "TOYOTA", "VOLKSWAGEN", "VOLVO", "XIAMEN", "XMQ", "YUTONG", "ZHENGZHOU", "ZHONGTONG"
+    ]
+  }
+  

@@ -9,6 +9,10 @@ export const hijriMonths = [
     "09 - Ramadan", "10 - Shawwal", "11 - Dhul-Qi'dah", "12 - Dhul-Hijjah"
 ];
 
+const currentYear = new Date().getFullYear();
+
+export const englishYears = Array.from({ length: 100 }, (_, index) => currentYear - index);
+export const hijriYears = Array.from({ length: 100 }, (_, index) => 1446 + index);
 
 export const carModels = ["3 Series", "718 Boxter T", "718 Cayman"];
 export const banks = ["Standard Bank", "Standard Chartered", "Barclays"];

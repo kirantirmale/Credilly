@@ -7,14 +7,15 @@ const BookCarForm = () => {
     month: "",
     year: "",
     make: "",
+    countryCode: "",
+    phoneNumber: "",
     model: "",
     estimatedAmount: "",
     financingType: "",
     incomeSource: "",
-    mobile: "",
     salary: "",
     companyName: "",
-    bank: ""
+    bank: "",
   });
 
   // Load from localStorage on mount
@@ -37,7 +38,22 @@ const BookCarForm = () => {
   const isXs = useMediaQuery("(max-width:600px)"); // Mobile (1 column)
   const isSm = useMediaQuery("(min-width:600px) and (max-width:960px)"); // Tablet (2 columns)
   const isMd = useMediaQuery("(min-width:960px) and (max-width:1280px)"); // Medium (3 columns)
-  const columns = isXs ? 1 : isSm ? 2 : isMd ? 3 : 4;
+  const columns = isXs ? 2 : isSm ? 2 : isMd ? 3 : 4;
+
+  // Define the field display order (excluding countryCode & phoneNumber separately)
+  const fieldOrder = [
+    "nationalId",
+    "month",
+    "year",
+    "make",
+    "model",
+    "estimatedAmount",
+    "financingType",
+    "incomeSource",
+    "salary",
+    "companyName",
+    "bank",
+  ];
 
   return (
     <Box sx={{ color: "white", p: 3 }}>
@@ -45,21 +61,34 @@ const BookCarForm = () => {
         sx={{
           display: "grid",
           gridTemplateColumns: `repeat(${columns}, 1fr)`,
-          gap: 2
+          gap: 2,
         }}
       >
-        {Object.keys(bookCarData).map((key) => (
+        {/* Combined Country Code & Phone Number Field */}
+        <TextField
+          key="contactInfo"
+          name="contactInfo"
+          label="Phone Number"
+          variant="standard"
+          value={`+${bookCarData.countryCode || ""} ${bookCarData.phoneNumber || ""}`}
+          fullWidth
+          margin="normal"
+          InputLabelProps={{ sx: { color: "white", fontSize: "1.4rem" } }}
+          InputProps={{ sx: { color: "white", fontSize: "1.5rem" }, readOnly: true }}
+        />
+
+        {/* Other Fields */}
+        {fieldOrder.map((key) => (
           <TextField
             key={key}
             name={key}
             label={key.charAt(0).toUpperCase() + key.slice(1)}
             variant="standard"
-            value={bookCarData[key]}
-            onChange={handleChange}
+            value={bookCarData[key] || ""}
             fullWidth
             margin="normal"
             InputLabelProps={{ sx: { color: "white", fontSize: "1.4rem" } }}
-            InputProps={{ sx: { color: "white", fontSize: "1.5rem" } ,readOnly: true }}
+            InputProps={{ sx: { color: "white", fontSize: "1.5rem" }, readOnly: true }}
           />
         ))}
       </Box>
