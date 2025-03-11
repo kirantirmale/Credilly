@@ -1,0 +1,210 @@
+/* Container Styling */
+.resume-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title Styling */
+.resume-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(6, 255, 240);
+}
+
+/* Content Styling */
+.resume-content {
+    text-align: left;
+}
+
+.resume-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Section Heading */
+.resume-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(6, 255, 240);
+}
+
+/* Grid for document display */
+.document-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+    justify-items: center;
+}
+
+/* Document Item */
+.document-item {
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    width: 160px; /* Fixed size */
+}
+
+/* Image Styling */
+.document-image, .small-image {
+    width: 100px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Profile Image */
+.profile-image {
+    width: 100px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Empty Resume Message */
+.resume-empty {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.print-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.print-button:hover {
+    background-color: #218838;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Flex Layout */
+.resume-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.resume-section {
+    flex: 1;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resume-title {
+        font-size: 20px;
+    }
+
+    .resume-heading {
+        font-size: 16px;
+    }
+
+    .submit-button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .document-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .profile-image {
+        width: 80px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-title {
+        font-size: 18px;
+    }
+
+    .resume-heading {
+        font-size: 14px;
+    }
+
+    .submit-button {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .document-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .profile-image {
+        width: 70px;
+        height: 90px;
+    }
+}
+
+
+
+@media print {
+    body * {
+      visibility: hidden;
+      
+    }
+    #resume-container, #resume-container * {
+      visibility: visible;
+    }
+    #resume-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+    .button-container {
+      display: none;
+    }
+  }
+  

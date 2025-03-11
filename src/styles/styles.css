@@ -12,6 +12,8 @@
 @import './home/leadership.css';
 @import './home/founder.css';
 @import './home/stepper.css';
+@import './home/UploadDocuments.css';
+@import './home/SubmitData.css';
 
 /* ===============services css ================= */
 @import './services/service-main.css';
