@@ -46,7 +46,7 @@ const BookCar = () => {
     const financeAmount = Math.max(carPrice - downPayment, 0);
     setValue("financeAmount", financeAmount); // Set computed value
   }, [carPrice, downPayment, setValue]);
-  
+
   useEffect(() => {
     const storedData = localStorage.getItem("bookCarData");
     if (storedData) {
@@ -64,8 +64,6 @@ const BookCar = () => {
   const handleTermsChange = () => {
     setIsTermsAccepted((prevState) => !prevState);
   };
-
-
 
   const onSubmit = async (data) => {
     if (!isTermsAccepted) {
@@ -185,17 +183,6 @@ const BookCar = () => {
                     defaultValue="966"
                     rules={{
                       required: "Mobile number is required",
-                      validate: (value) => {
-                        if (!value) return "Mobile number is required";
-
-                        const cleanedValue = value.replace(/\D/g, ""); // Remove non-numeric characters
-                        const saudiRegex = /^966\d{9}$/;
-                        const indiaRegex = /^91\d{10}$/;
-
-                        return saudiRegex.test(cleanedValue) || indiaRegex.test(cleanedValue)
-                          ? true
-                          : "Enter a valid Saudi (966XXXXXXXXX) or Indian (91XXXXXXXXXX) number";
-                      },
                     }}
                     render={({ field }) => (
                       <PhoneInput
@@ -204,11 +191,8 @@ const BookCar = () => {
                         onChange={(value, country) => {
                           const code = country.dialCode;
                           const cleanedNumber = value.replace(/\D/g, "").replace(new RegExp(`^${code}`), ""); // Ensure only numbers
-
                           setCountryCode(code);
                           setPhoneNumber(cleanedNumber);
-
-                          // Store phone number with country code for validation
                           setValue("phoneNumber", `${code}${cleanedNumber}`, { shouldValidate: true });
                         }}
                         inputStyle={{
@@ -218,10 +202,19 @@ const BookCar = () => {
                           borderRadius: "8px",
                           paddingLeft: "50px",
                           height: "45px",
+                          border: "1px solid #4b5563",
+                          width:"333px"
                         }}
                         dropdownStyle={{
                           backgroundColor: "#111827",
-                          width: "230px",
+                        }}
+                        containerStyle={{
+                          width: "100%",
+                        }}
+                        buttonStyle={{
+                          backgroundColor: "#111827", // Flag area background
+                          border: "1px solid #4b5563", // Flag area border
+                          borderRadius: "8px 0 0 8px", // Ensures it blends well with the input field
                         }}
                       />
                     )}
@@ -285,6 +278,7 @@ const BookCar = () => {
                   {errors.model && <p className="error-message">{errors.model.message}</p>}
                 </div>
 
+                {/* Car Price */}
                 <div className="input-container">
                   <input
                     {...register("carPrice", { valueAsNumber: true })}
@@ -481,6 +475,7 @@ const BookCar = () => {
           </div>
         </div>
       )}
+
     </section>
   );
 };
