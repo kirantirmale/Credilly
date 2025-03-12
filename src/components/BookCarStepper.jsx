@@ -71,22 +71,7 @@ const BookCarForm = () => {
           gap: 2,
         }}
       >
-        {/* Render Date of Birth only if available */}
-        {bookCarData.dob && bookCarData.dob.trim() !== "" && (
-          <TextField
-            name="dob"
-            label="Date of Birth"
-            variant="standard"
-            value={formatDate(bookCarData.dob)}
-            fullWidth
-            margin="normal"
-            InputLabelProps={{ sx: { color: "white", fontSize: "1.4rem" } }}
-            InputProps={{
-              sx: { color: "white", fontSize: "1.5rem" },
-              readOnly: true,
-            }}
-          />
-        )}
+      
 
         {/* Render Mobile Number only if available */}
         {bookCarData.countryCode &&
