@@ -10,8 +10,10 @@ import MainStepper from "./MainStepper";
 import Select from "react-select";
 import { customStyles } from '../styles/bookcar/costomcss';
 import { carOptions, aircraftOptions, bankOptions } from '../data/MakeCar';
+import { englishMonths, hijriMonths, englishYears, hijriYears } from "../data/Calender";
 
 const BookCar = () => {
+
   const {
     register,
     handleSubmit,
@@ -24,7 +26,7 @@ const BookCar = () => {
     setValue,
   } = useForm({
     resolver: yupResolver(validationSchema), defaultValues: {
-      incomeSource: "salaried", // Setting default value
+      incomeSource: "salaried",
     },
   });
 
@@ -34,6 +36,7 @@ const BookCar = () => {
   const [loading, setLoading] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
   const [nationalId, setNationalId] = useState("");
+  const [isHijri, setIsHijri] = useState(false);
   const [isTermsAccepted, setIsTermsAccepted] = useState(false);
   const [submittedData, setSubmittedData] = useState(null);
   const [countryCode, setCountryCode] = useState("966");
@@ -59,7 +62,10 @@ const BookCar = () => {
     setNationalId(id);
     setValue("nationalId", id);
     trigger("nationalId");
+    setIsHijri(id.startsWith("1"));
+
   };
+
 
   const handleTermsChange = () => {
     setIsTermsAccepted((prevState) => !prevState);
@@ -109,6 +115,7 @@ const BookCar = () => {
       setNationalId("");
       setPhoneNumber("");
       setCountryCode("966");
+      setIsHijri(false);
       setIsTermsAccepted(false);
       setSubmittedData(null);
     } else {
@@ -143,6 +150,7 @@ const BookCar = () => {
 
                 {/* National ID */}
                 <div className="input-container">
+                  <label className="lable">National ID / Iqama No</label>
                   <input
                     {...register("nationalId")}
                     placeholder="National ID / Iqama No"
@@ -154,29 +162,45 @@ const BookCar = () => {
                   {errors.nationalId && <p className="error-message">{errors.nationalId.message}</p>}
                 </div>
 
-                {/* Date of Birth (DOB) */}
-                <div className="input-container">
-                  <Controller
-                    control={control}
-                    name="dob"
-                    render={({ field }) => (
-                      <input
-                        {...field}
-                        type="date"
-                        id="dob"
-                        className={`input-field ${errors.dob ? "input-error" : ""}`}
-                        onClick={(e) => e.target.showPicker()}
-                        placeholder="DD/MM/YYYY"
-                        max={new Date().toISOString().split("T")[0]} // Max date is today
-                        title="Date of Birth" // Shows field name on hover
+                {/* Month Dropdown */}
+                <div>
+                  <label className="lable">DOB</label>
+                  <div className="dob-container">
+                    <div className="input-container">
+                      <Select
+                        options={(isHijri ? hijriMonths : englishMonths).map((month) => ({ value: month, label: month }))}
+                        placeholder="Select Month"
+                        classNamePrefix="react-select"
+                        styles={customStyles}
+                        isSearchable
+                        onChange={(selectedOption) => {
+                          setValue("month", selectedOption?.value, { shouldValidate: true }); // Set value & trigger validation
+                        }}
                       />
-                    )}
-                  />
-                  {errors.dob && <p className="error-message">{errors.dob.message}</p>}
+                      {errors.month && <p className="error-message">{errors.month.message}</p>}
+                    </div>
+
+                    {/* Year Dropdown */}
+                    <div className="input-container">
+                      <Select
+                        options={(isHijri ? hijriYears : englishYears).map((year) => ({ value: year, label: year }))}
+                        placeholder="Select Year"
+                        classNamePrefix="react-select"
+                        isSearchable
+                        styles={customStyles}
+                        onChange={
+                          (selectedOption) => setValue("year", selectedOption?.value, { shouldValidate: true })
+                        }
+                      />
+                      {errors.year && <p className="error-message">{errors.year.message}</p>}
+                    </div>
+                  </div>
                 </div>
 
                 {/* Phone Input */}
                 <div className="input-container">
+                  <label className="lable">Mobile number</label>
+
                   <Controller
                     name="phoneNumber"
                     control={control}
@@ -203,7 +227,7 @@ const BookCar = () => {
                           paddingLeft: "50px",
                           height: "45px",
                           border: "1px solid #4b5563",
-                          width:"333px"
+                          width: "333px"
                         }}
                         dropdownStyle={{
                           backgroundColor: "#111827",
@@ -224,6 +248,8 @@ const BookCar = () => {
 
                 {/* Financing Type */}
                 <div className="input-container">
+                  <label className="lable">Financing Type</label>
+
                   <select {...register("financingType")} id="financingType" className="select-field">
                     <option value="">Select Financing Type</option>
                     <option value="New Car">New Car</option>
@@ -235,6 +261,8 @@ const BookCar = () => {
 
                 {/* Make */}
                 <div className="input-container">
+                  <label className="lable">Make</label>
+
                   <Controller
                     name="make"
                     control={control}
@@ -257,6 +285,8 @@ const BookCar = () => {
 
                 {/* Model Dropdown */}
                 <div className="input-container">
+                  <label className="lable">Model</label>
+
                   <Controller
                     name="model"
                     control={control}
@@ -280,40 +310,144 @@ const BookCar = () => {
 
                 {/* Car Price */}
                 <div className="input-container">
+                  <label className="lable">Car Price</label>
+
                   <input
                     {...register("carPrice", { valueAsNumber: true })}
-                    placeholder="Car Price ﷼"
+                    placeholder="﷼ Car Price"
                     className={`input-field ${errors.carPrice ? "input-error" : ""}`}
-                    type="number"
+                    type="text"
                   />
                   {errors.carPrice && <p className="error-message">{errors.carPrice.message}</p>}
                 </div>
 
                 {/* Down Payment */}
                 <div className="input-container">
+                  <label className="lable">Down Payment</label>
+
                   <input
                     {...register("downPayment", { valueAsNumber: true })}
-                    placeholder="Down Payment ﷼"
+                    placeholder="﷼ Down Payment "
                     className={`input-field ${errors.downPayment ? "input-error" : ""}`}
-                    type="number"
+                    type="text"
                   />
                   {errors.downPayment && <p className="error-message">{errors.downPayment.message}</p>}
                 </div>
 
                 {/* Finance Amount (Auto-calculated) */}
                 <div className="input-container">
+                  <label className="lable">Finance Amount</label>
+
                   <input
                     {...register("financeAmount")}
-                    placeholder="Finance Amount ﷼"
+                    placeholder="﷼ Finance Amount "
                     className="input-field"
                     type="number"
                     readOnly // Prevent manual editing
                   />
                 </div>
 
+                {/* Income Type*/}
+                <div className="input-container">
+                  <label className="lable">Income Type</label>
+
+                  <select
+                    {...register("incomeSource")}
+                    id="incomeSource"
+                    className="select-field"
+                    defaultValue="salaried"
+                    onChange={(e) => setValue("incomeSource", e.target.value, { shouldValidate: true })}
+                  >
+                    <option value="">Select Income Type</option>
+                    <option value="salaried">Salaried</option>
+                    <option value="self-employed">Self-Employed</option>
+                    <option value="business">Business</option>
+                    <option value="retired">Retired</option>
+                  </select>
+                  {errors.incomeSource && <p className="error-message">{errors.incomeSource.message}</p>}
+                </div>
+
+                {/* Salaried Fields */}
+                {incomeSource === "salaried" && (
+                  <>
+                    <div className="input-container">
+                      <label className="lable">Income / Salary SAR</label>
+
+                      <input
+                        {...register("salary")}
+                        placeholder="Income / Salary SAR"
+                        className={`input-field ${errors.salary ? "input-error" : ""}`}
+                      />
+                      {errors.salary && <p className="error-message">{errors.salary.message}</p>}
+                    </div>
+
+
+                    <div className="input-container">
+                      <label className="lable">Employer Name</label>
+
+                      <input
+                        {...register("companyName")}
+                        placeholder="Employer Name"
+                        className={`input-field ${errors.companyName ? "input-error" : ""}`}
+                      />
+                      {errors.companyName && <p className="error-message">{errors.companyName.message}</p>}
+                    </div>
+
+
+                    <div className="input-container">
+                      <label className="lable">Monthly Expenses</label>
+
+                      <input
+                        {...register("monthlyExpenses")}
+                        placeholder="Monthly Expenses"
+                        className={`input-field ${errors.monthlyExpenses ? "input-error" : ""}`}
+                      />
+                      {errors.monthlyExpenses && <p className="error-message">{errors.monthlyExpenses.message}</p>}
+                    </div>
+                  </>
+
+                )}
+
+                {/* Self-Employed / Business Fields */}
+                {(incomeSource === "self-employed" || incomeSource === "business") && (
+                  <>
+                    <div className="input-container">
+                      <label className="lable">Monthly Income</label>
+
+                      <input {...register("monthlyIncome")} placeholder="Monthly Income" className="input-field" />
+                      {errors.monthlyIncome && <p className="error-message">{errors.monthlyIncome.message}</p>}
+                    </div>
+
+                    <div className="input-container">
+                      <label className="lable">Organization Name</label>
+
+                      <input {...register("organizationName")} placeholder="Organization Name" className="input-field" />
+                      {errors.organizationName && <p className="error-message">{errors.financeAmount.message}</p>}
+                    </div>
+                  </>
+                )}
+
+                {/* Retired Fields */}
+                {incomeSource === "retired" && (
+                  <>
+                    <div className="input-container">
+                      <label className="lable">Monthly Income</label>
+
+                      <input
+                        {...register("monthlyIncome")}
+                        placeholder="Monthly Income"
+                        className={`input-field ${errors.monthlyIncome ? "input-error" : ""}`}
+                      />
+                      {errors.monthlyIncome && <p className="error-message">{errors.monthlyIncome.message}</p>}
+                    </div>
+                  </>
+
+                )}
 
                 {/* Bank */}
                 <div className="input-container">
+                  <label className="lable">Bank</label>
+
                   <Controller
                     name="bank"
                     control={control}
@@ -334,101 +468,13 @@ const BookCar = () => {
                   {errors.bank && <p className="error-message">{errors.bank.message}</p>}
                 </div>
 
-                {/* Income Type*/}
-                <div className="input-container">
-                  <select
-                    {...register("incomeSource")}
-                    id="incomeSource"
-                    className="select-field"
-                    defaultValue="salaried"
-                    onChange={(e) => setValue("incomeSource", e.target.value, { shouldValidate: true })}
-                  >
-                    <option value="">Select Income Type</option>
-                    <option value="salaried">Salaried</option>
-                    <option value="self-employed">Self-Employed</option>
-                    <option value="business">Business</option>
-                    <option value="retired">Retired</option>
-                  </select>
-                  {errors.incomeSource && <p className="error-message">{errors.incomeSource.message}</p>}
-                </div>
-
               </div>
-              <div>
-
-                {/* Salaried Fields */}
-                {incomeSource === "salaried" && (
-                  <div className="grid-container">
-                    <div className="input-container">
-                      <input
-                        {...register("salary")}
-                        placeholder="Monthly Income (M)"
-                        className={`input-field ${errors.salary ? "input-error" : ""}`}
-                      />
-                      {errors.salary && <p className="error-message">{errors.salary.message}</p>}
-                    </div>
-
-                    <div className="input-container">
-                      <input
-                        {...register("companyName")}
-                        placeholder="Employer Name (M)"
-                        className={`input-field ${errors.companyName ? "input-error" : ""}`}
-                      />
-                      {errors.companyName && <p className="error-message">{errors.companyName.message}</p>}
-                    </div>
-
-                    <div className="input-container">
-                      <input
-                        {...register("monthlyExpenses")}
-                        placeholder="Monthly Expenses (M)"
-                        className={`input-field ${errors.monthlyExpenses ? "input-error" : ""}`}
-                      />
-                      {errors.monthlyExpenses && <p className="error-message">{errors.monthlyExpenses.message}</p>}
-                    </div>
-                  </div>
-
-                )}
-
-                {/* Self-Employed / Business Fields */}
-                {(incomeSource === "self-employed" || incomeSource === "business") && (
-                  <div className="grid-container">
-                    <div className="input-container">
-                      <input {...register("monthlyIncome")} placeholder="Monthly Income (M)" className="input-field" />
-                      {errors.monthlyIncome && <p className="error-message">{errors.monthlyIncome.message}</p>}
-                    </div>
-
-                    <div className="input-container">
-                      <input {...register("organizationName")} placeholder="Organization Name (NM)" className="input-field" />
-                      {errors.organizationName && <p className="error-message">{errors.financeAmount.message}</p>}
-                    </div>
-                  </div>
-                )}
-
-                {/* Retired Fields */}
-                {incomeSource === "retired" && (
-                  <div className="grid-container">
-                    <div className="input-container">
-                      <input
-                        {...register("monthlyIncome")}
-                        placeholder="Monthly Income (M)"
-                        className={`input-field ${errors.monthlyIncome ? "input-error" : ""}`}
-                      />
-                      {errors.monthlyIncome && <p className="error-message">{errors.monthlyIncome.message}</p>}
-                    </div>
-                  </div>
-
-                )}
-
-              </div>
-
-
-
 
               {/* Terms and Submit Button */}
               <div className="terms-checkbox">
                 <input {...register("terms")} type="checkbox" id="terms" checked={isTermsAccepted} onChange={handleTermsChange} />
                 <label htmlFor="terms">I accept the terms and conditions</label>
               </div>
-
 
               <div className="submit-btn">
                 <button className="Here" type="submit" disabled={loading || !isTermsAccepted}>
@@ -439,6 +485,7 @@ const BookCar = () => {
 
           </>
         )}
+        
       </div>
 
       {isOtpOpen && (

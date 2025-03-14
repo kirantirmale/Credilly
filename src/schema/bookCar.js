@@ -6,9 +6,8 @@ export const validationSchema = yup.object().shape({
     .matches(/^\d{10}$/, "National ID must be exactly 10 digits")
     .required("National ID is required"),
 
-  dob: yup
-    .string()
-    .required("Date of Birth is required"),
+  month: yup.string().required("Month is required"),
+  year: yup.string().required("Year is required"),
 
   phoneNumber: yup
     .string()
@@ -53,9 +52,6 @@ export const validationSchema = yup.object().shape({
     .number()
     .typeError("Monthly expenses must be a number")
     .required("Monthly expenses are required"),
-
-
-  termsAccepted: yup.bool().oneOf([true], "You must accept the terms and conditions"),
 });
 
 

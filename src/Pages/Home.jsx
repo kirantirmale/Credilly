@@ -6,13 +6,15 @@ import BookCar from "../components/BookCar";
 import IdeationServices from "../components/IdeationServices";
 import ServiceCard from "../components/ServicecCard";
 import Banks from "../components/Banks";
+import MainStepper from "../components/MainStepper";
 
 
 function Home() {
   return (
     <>
       <Hero />
-      <BookCar/>
+      <MainStepper/>
+      {/* <BookCar/> */}
       <Founder/>
       <Banks />
       <IdeationServices/>

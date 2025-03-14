@@ -18,48 +18,41 @@ const BookCarForm = () => {
   const isXs = useMediaQuery("(max-width:600px)");
   const isSm = useMediaQuery("(min-width:600px) and (max-width:960px)");
   const isMd = useMediaQuery("(min-width:960px) and (max-width:1280px)");
-  const columns = isXs ? 1 : isSm ? 2 : isMd ? 3 : 4;
+  const columns = isXs ? 1 : isSm ? 2 : isMd ? 3 : 5;
 
-  const orderedKeys = [
-    "nationalId",
-    "dob",
-    "financingType",
-    "make",
-    "model",
-    "carPrice",
-    "downPayment",
-    "financeAmount",
-    "bank",
-    "incomeSource",
-    "companyName",
-    "salary",
-    "monthlyExpenses",
-    "terms",
-  ];
+  const labelMapping = {
+    nationalId: "National ID",
+    phoneNumber: "Mobile Number",
+    month: "Month",
+    year: "Year",
+    financingType: "Financing Type",
+    make: "Make",
+    model: "Model",
+    carPrice: "Car Price",
+    downPayment: "Down Payment",
+    financeAmount: "Finance Amount",
+    bank: "Bank",
+    incomeSource: "Income Source",
+    companyName: "Company Name",
+    salary: "Salary",
+    monthlyExpenses: "Monthly Expenses",
+  };
 
-  // Merge ordered keys and additional keys, excluding empty fields
+  const orderedKeys = Object.keys(labelMapping);
+
   const allKeys = orderedKeys.concat(
     Object.keys(bookCarData).filter(
       (key) =>
         !orderedKeys.includes(key) &&
         key !== "countryCode" &&
-        key !== "phoneNumber" &&
-        bookCarData[key] // Exclude empty/null values
+        key !== "terms" && // Exclude "terms"
+        bookCarData[key]
     )
   );
 
-  // Function to format the date to DD/MM/YYYY
-  const formatDate = (dateString) => {
-    if (!dateString) return "";
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return dateString; // Return original if invalid date
-    return date.toLocaleDateString("en-GB"); // DD/MM/YYYY format
-  };
-
-  // Function to format currency with commas
   const formatCurrency = (value) => {
     if (!value || isNaN(value)) return value;
-    return parseFloat(value).toLocaleString("en-IN"); // Uses Indian Number System
+    return parseFloat(value).toLocaleString("en-IN");
   };
 
   return (
@@ -71,9 +64,24 @@ const BookCarForm = () => {
           gap: 2,
         }}
       >
-      
+        {/* National ID */}
+        {bookCarData.nationalId && (
+          <TextField
+            name="nationalId"
+            label="National ID"
+            variant="standard"
+            value={bookCarData.nationalId}
+            fullWidth
+            margin="normal"
+            InputLabelProps={{ sx: { color: "white", fontSize: "1.6rem" } }}
+            InputProps={{
+              sx: { color: "white", fontSize: "1.7rem" },
+              readOnly: true,
+            }}
+          />
+        )}
 
-        {/* Render Mobile Number only if available */}
+        {/* Mobile Number */}
         {bookCarData.countryCode &&
           bookCarData.phoneNumber &&
           bookCarData.phoneNumber.trim() !== "" && (
@@ -84,23 +92,45 @@ const BookCarForm = () => {
               value={`+${bookCarData.countryCode} ${bookCarData.phoneNumber}`}
               fullWidth
               margin="normal"
-              InputLabelProps={{ sx: { color: "white", fontSize: "1.4rem" } }}
+              InputLabelProps={{ sx: { color: "white", fontSize: "1.6rem" } }}
               InputProps={{
-                sx: { color: "white", fontSize: "1.5rem" },
+                sx: { color: "white", fontSize: "1.7rem" },
                 readOnly: true,
               }}
             />
           )}
 
-        {/* Render remaining fields, excluding empty ones */}
+        {/* Date of Birth (Month-Year) */}
+        {bookCarData.month && bookCarData.year && (
+          <TextField
+            name="dob"
+            label="DOB"
+            variant="standard"
+            value={`${bookCarData.month}-${bookCarData.year}`}
+            fullWidth
+            margin="normal"
+            InputLabelProps={{ sx: { color: "white", fontSize: "1.6rem" } }}
+            InputProps={{
+              sx: { color: "white", fontSize: "1.7rem" },
+              readOnly: true,
+            }}
+          />
+        )}
+
+        {/* Render remaining fields */}
         {allKeys.map(
           (key) =>
             bookCarData[key] &&
-            bookCarData[key].toString().trim() !== "" && (
+            bookCarData[key].toString().trim() !== "" &&
+            key !== "nationalId" &&
+            key !== "phoneNumber" &&
+            key !== "countryCode" &&
+            key !== "month" &&
+            key !== "year" && (
               <TextField
                 key={key}
                 name={key}
-                label={key.charAt(0).toUpperCase() + key.slice(1)}
+                label={labelMapping[key] || key.replace(/([A-Z])/g, " $1").trim()}
                 variant="standard"
                 value={
                   ["salary", "carPrice", "downPayment", "financeAmount"].includes(key)
@@ -109,9 +139,9 @@ const BookCarForm = () => {
                 }
                 fullWidth
                 margin="normal"
-                InputLabelProps={{ sx: { color: "white", fontSize: "1.4rem" } }}
+                InputLabelProps={{ sx: { color: "white", fontSize: "1.6rem" } }}
                 InputProps={{
-                  sx: { color: "white", fontSize: "1.5rem" },
+                  sx: { color: "white", fontSize: "1.7rem" },
                   readOnly: true,
                 }}
               />

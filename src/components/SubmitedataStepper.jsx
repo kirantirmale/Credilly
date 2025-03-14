@@ -84,10 +84,10 @@ const ResumeDisplay = () => {
             <div className="resume-section">
               <h3 className="resume-heading">Uploaded Documents</h3>
               <div className="document-grid">
-                {data?.uploadedDocuments?.aadhar && (
+                {data?.uploadedDocuments?.SalarySlip && (
                   <div className="document-item">
-                    <p><strong>Aadhar Card</strong></p>
-                    <img src={data.uploadedDocuments.aadhar.data} alt="Aadhar" className="document-image" />
+                    <p><strong>Salary Slip</strong></p>
+                    <img src={data.uploadedDocuments.SalarySlip.data} alt="Aadhar" className="document-image" />
                   </div>
                 )}
                 {data?.uploadedDocuments?.pan && (
@@ -114,7 +114,7 @@ const ResumeDisplay = () => {
         </div>
 
         <div className="button-container">
-          <button onClick={handleSubmit} className="submit-button">Submit Data</button>
+          <button onClick={handleSubmit} className="submit-button">Pick your Car</button>
           <button onClick={handlePrint} className="print-button">Print / Download</button>
         </div>
       </div>

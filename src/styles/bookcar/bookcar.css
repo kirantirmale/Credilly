@@ -15,6 +15,23 @@
   --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
+.dob-container {
+  display: flex;
+  /* gap: 20px; */
+  align-items: center;
+  justify-content: space-between;
+  width: 100% !important;
+}
+.input-container {
+  flex: 1; /* This makes both dropdowns take equal width */
+}
+.lable{
+  margin-left: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  color: var(--text-color);
+  font-weight: 400 !important;
+}
 
 .react-select__input {
   padding: 3px 0px !important;
@@ -200,7 +217,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 35px;
+  gap: 25px;
   margin-bottom: 16px;
   margin-top: 30px;
 }
@@ -322,7 +339,6 @@
   font-size: 12px;
 }
 
-
 .otp-modal {
   position: fixed;
   top: 0;
@@ -345,10 +361,63 @@
   width: 350px;
 }
 
-.otp-modal h3 {
-  margin-bottom: 1rem;
-  color: #333;
+.otp-heading {
+  font-weight: bold;
   font-size: 1.5rem;
+}
+
+.otp-sent {
+  background: #f1f5f9;
+  /* padding: 10px; */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  color: #000;
+}
+
+.otp-icon {
+  background: #25D366;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.otp-edit {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.otp-resend {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.resend-button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.otp-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.otp-input {
+  width: 5rem;
+  height: 5rem;
+  font-size: 1.7rem;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
 }
 
 .otp-actions {
@@ -384,20 +453,12 @@
   background: #b71c1c;
 }
 
-/* OTP Input Styling */
-.otp-modal input {
-  width: 150px;
-  height: 50px;
-  margin: 0 5px;
-  text-align: center;
-  font-size: 1.2rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-  transition: 0.3s;
+.otp-terms {
+  margin-top: 10px;
+  font-size: 0.8rem;
 }
 
-.otp-modal input:focus {
-  border-color: #4caf50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+.otp-terms a {
+  color: #007bff;
+  text-decoration: none;
 }

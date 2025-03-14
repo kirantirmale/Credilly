@@ -5,14 +5,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 const UploadDocuments = () => {
   const [files, setFiles] = useState({
-    aadhar: null,
+    SalarySlip: null,
     pan: null,
     license: null,
     photo: null,
   });
 
   const [loading, setLoading] = useState({
-    aadhar: false,
+    SalarySlip: false,
     pan: false,
     license: false,
     photo: false,
@@ -89,7 +89,7 @@ const UploadDocuments = () => {
       <h2 className="upload-title">Upload Your Documents</h2>
 
       <div className="upload-row">
-        {["aadhar", "pan", "license", "photo"].map((key) => (
+        {["SalarySlip", "pan", "license", "photo"].map((key) => (
           <div className="upload-box" key={key}>
             <label className="upload-label">
               {key.replace(/^\w/, (c) => c.toUpperCase())}
