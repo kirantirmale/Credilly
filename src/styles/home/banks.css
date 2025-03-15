@@ -3,16 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --primary-font: "Open Sans", serif;
-  --secondery-font: 'Ethnocentric Rg', sans-serif;
-  --logo-font: "Pacifico", serif;
-  --primary-color: rgb(6 255 240);
-  --secondery-color: rgb(46, 147, 149);
-  --bg3-color: #635f5f92;
-  --text-color: #b1b1b1;
-  --bg-dark: #000;
-  --white: #fff;
-  --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    --primary-font: "Open Sans", serif;
+    --secondery-font: 'Ethnocentric Rg', sans-serif;
+    --logo-font: "Pacifico", serif;
+    --primary-color: rgb(6 255 240);
+    --secondery-color: rgb(46, 147, 149);
+    --bg3-color: #635f5f92;
+    --text-color: #b1b1b1;
+    --bg-dark: #000;
+    --white: #fff;
+    --shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 
@@ -29,7 +29,7 @@
     height: 500px;
     width: 100%;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-    animation: borderAnimation 3s linear infinite; 
+    animation: borderAnimation 3s linear infinite;
 }
 
 
@@ -37,30 +37,35 @@
     0% {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
     }
+
     50% {
         border-color: white;
         box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
     }
 }
 
 
-.Innovators{
+.Innovators {
     font-size: 3rem;
     font-family: var(--primary-font);
     color: var(--text-color);
 }
+
 .marquee {
     display: flex;
     gap: 15px;
-    animation: marquee 20s linear infinite;
+    animation: marquee 30s linear infinite;
 }
+
 @keyframes marquee {
     from {
         transform: translateX(50%);
     }
+
     to {
         transform: translateX(-50%);
     }
@@ -106,19 +111,22 @@
 .user-name {
     font-size: 14px;
     font-weight: 600;
-    color: white; /* White text */
+    color: white;
+    /* White text */
 }
 
 .user-username {
     font-size: 12px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.6); /* Slightly lighter white */
+    color: rgba(255, 255, 255, 0.6);
+    /* Slightly lighter white */
 }
 
 .review-text {
     margin-top: 8px;
     font-size: 14px;
-    color: white; /* White text */
+    color: white;
+    /* White text */
 }
 
 .gradient-left,
@@ -139,6 +147,7 @@
     right: 0;
     background: linear-gradient(to left, black, transparent);
 }
+
 @media screen and (max-width: 1024px) {
     .marquee-container {
         height: auto;
