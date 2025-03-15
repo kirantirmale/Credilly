@@ -28,9 +28,12 @@ function Navbar() {
 
     return () => clearInterval(interval); // Cleanup the interval on component unmount
   }, []);
-
   const openNav = () => setNav(!nav);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    setOpen(true);
+    setNav(false); // Close mobile navbar
+  };
+  // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const handleLogout = () => {
@@ -115,6 +118,7 @@ function Navbar() {
             p: 3,
             borderRadius: 2,
             border: "2px solid rgb(6, 255, 240)",
+            
           }}
         >
           <Typography id="user-modal-title" variant="h6">

@@ -131,10 +131,10 @@ const MainStepper = () => {
             {/* Show buttons if bookCarData exists, else hide on step 0 */}
             {(hasBookCarData || activeStep !== 0) && (
               <Box sx={{ display: "flex", justifyContent: "space-between", mt: 3 }}>
-                <Button disabled={activeStep === 0} onClick={handleBack} variant="contained">
+                <Button disabled={activeStep === 0} onClick={handleBack} variant="outlined" color="inherit">
                   Previous
                 </Button>
-                <Button disabled={activeStep === steps.length - 1} onClick={handleNext} variant="contained">
+                <Button disabled={activeStep === steps.length - 1} onClick={handleNext} color="inherit" variant="outlined">
                   Next
                 </Button>
               </Box>

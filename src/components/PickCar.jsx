@@ -178,7 +178,7 @@ const PickCar = ({handleNext }) => {
                                         <div className="input-container">
                                             <Select
                                                 options={(isHijri ? hijriMonths : englishMonths).map((month) => ({ value: month, label: month }))}
-                                                placeholder="Select Month"
+                                                placeholder="Month"
                                                 classNamePrefix="react-select"
                                                 styles={customStyles}
                                                 isSearchable
@@ -193,7 +193,7 @@ const PickCar = ({handleNext }) => {
                                         <div className="input-container">
                                             <Select
                                                 options={(isHijri ? hijriYears : englishYears).map((year) => ({ value: year, label: year }))}
-                                                placeholder="Select Year"
+                                                placeholder="Year"
                                                 classNamePrefix="react-select"
                                                 isSearchable
                                                 styles={customStyles}
@@ -236,7 +236,7 @@ const PickCar = ({handleNext }) => {
                                                     paddingLeft: "50px",
                                                     height: "45px",
                                                     border: "1px solid #4b5563",
-                                                    width: "333px"
+                                                    width: "100%"
                                                 }}
                                                 dropdownStyle={{
                                                     backgroundColor: "#111827",
@@ -336,7 +336,7 @@ const PickCar = ({handleNext }) => {
 
                                     <input
                                         {...register("downPayment", { valueAsNumber: true })}
-                                        placeholder="﷼ Down Payment "
+                                        placeholder="﷼  Down Payment "
                                         className={`input-field ${errors.downPayment ? "input-error" : ""}`}
                                         type="text"
                                     />
@@ -349,7 +349,7 @@ const PickCar = ({handleNext }) => {
 
                                     <input
                                         {...register("financeAmount")}
-                                        placeholder="﷼ Finance Amount "
+                                        placeholder="﷼  Finance Amount "
                                         className="input-field"
                                         type="number"
                                         readOnly // Prevent manual editing
