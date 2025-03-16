@@ -95,16 +95,15 @@
   padding: 32px 16px;
   gap: 35px;
 }
-
-/* Input error and validation styles */
-.input-error {
-  border: 1px solid red;
+.input-container {
+  position: relative;
 }
 
 .error-message {
   color: red;
-  font-size: 12px;
-  position: absolute;
+  font-size: 10px;
+  font-weight: 400 !important;
+    position: absolute;
   bottom: -18px;
   left: 0;
   width: 100%;
@@ -114,6 +113,29 @@
   border: 1px solid red;
   box-shadow: 0 0 5px red;
 }
+
+.select-field {
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.contact-info a {
+  text-decoration: none;
+}
+
+
+.input-error {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 10px;
+  font-weight: 400 !important;
+  margin-top: 5px;
+  margin-left: 8px;
+}
+
 
 /* Input fields and select fields */
 .input-field,

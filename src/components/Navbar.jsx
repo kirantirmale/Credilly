@@ -40,7 +40,6 @@ function Navbar() {
     localStorage.removeItem("bookCarData");
     fetchUserData(); // Update state after removing data
     setOpen(false);
-    window.location.reload(); // Refresh the page to reflect changes
   };
 
   return (

@@ -188,7 +188,7 @@ const PickCar = ({handleNext }) => {
                                             />
                                             {errors.month && <p className="error-message">{errors.month.message}</p>}
                                         </div>
-
+                                   
                                         {/* Year Dropdown */}
                                         <div className="input-container">
                                             <Select
