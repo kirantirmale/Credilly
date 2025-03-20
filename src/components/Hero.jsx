@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import TopArrow from './TopArrow';
 // import heroVideo from '../videos/video-1.mp4';
 
 const Hero = () => {
@@ -92,6 +93,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <TopArrow/>
     </section>
   );
 };

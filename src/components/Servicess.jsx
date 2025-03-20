@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useCallback } from "react";
 import { gsap } from "gsap";
 import Arrow from '../images/icon/Arrow.png';
 import { useNavigate } from "react-router-dom";
+import TopArrow from "./TopArrow";
 
 const Servicess = () => {
     const navigate = useNavigate();
@@ -171,6 +172,7 @@ const Servicess = () => {
                         <img alt="Right Arrow" src={Arrow} />
                     </button>
                 </div>
+                <TopArrow/>
             </div>
         </section>
     );
